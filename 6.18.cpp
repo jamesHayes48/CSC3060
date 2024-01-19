@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
 
 // Prompt for number of rooms
@@ -78,7 +80,7 @@ int numberOfRooms(int leastNum) {
 
 double priceOfPaint(double leastCost) {
 	bool validInput = false;
-	double inputPrice = 0;
+	double inputPrice = 0.0;
 
 	do {
 		cout << "Enter price of paint no less than $10.00:\n";
@@ -110,7 +112,7 @@ int wallSpace(int leastWallSpace, int numberOfRooms) {
 		else {
 			cout << "Invalid input! Please enter a non-negative number.\n";
 		}
-	} while (validInput == false || count < numberOfRooms);
+	} while (validInput == false || count <= numberOfRooms);
 
 	return totalWallSpace;
 }
