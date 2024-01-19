@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
@@ -53,7 +52,7 @@ int main() {
 	gallonsOfPaint = calculateGallons(userMultiplier);
 	laborHours = calculateLaborHour(oneHourLabor, userMultiplier);
 	laborCost = calculateLaborCost(oneHourCost, laborHours);
-	paintCost = calculatePaintCost(userMultiplier, userPaintPrice);
+	paintCost = calculatePaintCost(userPaintPrice, userMultiplier);
 
 	totalCost = laborCost + paintCost;
 
