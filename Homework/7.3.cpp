@@ -13,6 +13,7 @@ salsas.
 #include <string>
 using namespace std;
 
+// Constants
 const int NUMBER_OF_SALSAS = 5;
 const int NON_NEGATIVE = 0;
 
@@ -54,6 +55,7 @@ number of salsa types, and lowest amount of salsa sold
 Return: None, but change array salsaSold in main
 */
 void jarsSold(int salsaSold[], string salsaNames[], int size, int least) {
+	// Iterate through every salsa for input
 	for (int i = 0; i < size; i++) {
 		int input = 0;
 		bool valid = false;
@@ -115,6 +117,7 @@ void findHighestSalsa(string salsaNames[], int salsaSold[], int size) {
 	int mostSales = salsaSold[0];
 	string mostSoldSalsa = salsaNames[0];
 
+	// Iterate through every salsa sold and decide if it sold more
 	for (int i = 1; i < size; i++) {
 		if (salsaSold[i] > mostSales) {
 			mostSoldSalsa = salsaNames[i];
@@ -135,6 +138,7 @@ void findLowestSalsa(string salsaNames[], int salsaSold[], int size) {
 	int leastSales = salsaSold[0];
 	string leastSoldSalsa = salsaNames[0];
 
+	// Iterate through every salsa to find out the least sold salsa
 	for (int i = 1; i < size; i++) {
 		if (salsaSold[i] < leastSales) {
 			leastSoldSalsa = salsaNames[i];
