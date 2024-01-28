@@ -9,6 +9,7 @@ monkey, and the most amount of food eaten by one monkey.
 */
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 // Constants
@@ -94,7 +95,8 @@ void findAverage(double foodEaten[][DAYS_OF_WEEK], int monkeys, int days) {
 
 	average = totalPounds / (days * monkeys);
 
-	cout << "An average of " << average << " pounds was eaten by the monkeys per day" << endl;
+	cout << fixed << setprecision(2) << 
+		"An average of " << average << " pounds was eaten by the monkeys per day" << endl;
 }
 
 /*
@@ -113,7 +115,8 @@ void findLeastAmount(double foodEaten[][DAYS_OF_WEEK], int monkeys, int days) {
 		}
 	}
 
-	cout << "The least amount of food eaten on a day was " << leastAmount << " pounds" << endl;
+	cout << fixed << setprecision(2) << 
+		"The least amount of food eaten on a day was " << leastAmount << " pounds" << endl;
 }
 
 /*
@@ -132,5 +135,6 @@ void findMostAmount(double foodEaten[][DAYS_OF_WEEK], int monkeys, int days) {
 		}
 	}
 
-	cout << "The most amount of food eaten on a day was " << mostAmount << " pounds" << endl;
+	cout << fixed << setprecision(2) << 
+		"The most amount of food eaten on a day was " << mostAmount << " pounds" << endl;
 }
