@@ -40,6 +40,8 @@ int main() {
 	else {
 		cout << "There is no mode";
 	}
+
+	// Exit program
 	return 0;
 }
 
