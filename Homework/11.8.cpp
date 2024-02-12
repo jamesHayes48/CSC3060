@@ -53,7 +53,7 @@ int main() {
 		cout << "Enter Integer for Zip: ";
 		cin >> customers[i].zip;
 		
-		cout << "Enter Integer for Balance: ";
+		cout << "Enter Integer for Balance: $";
 		cin >> customers[i].balance;
 
 		cout << "Enter Date of Last Payment: ";
@@ -100,7 +100,7 @@ void searchAccount(string inputName, customer customerArray[], int size) {
 		cout << "City: " << customerArray[foundIndex].city << endl;
 		cout << "State: " << customerArray[foundIndex].state << endl;
 		cout << "Zip: " << customerArray[foundIndex].zip << endl;
-		cout << "Balance: " << customerArray[foundIndex].balance << endl;
+		cout << "Balance: $" << customerArray[foundIndex].balance << endl;
 		cout << "Date of last payment: " << customerArray[foundIndex].dateOfLastPayment << endl;
 	}
 	else {
