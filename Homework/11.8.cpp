@@ -1,6 +1,8 @@
 /*
 Name: James Hayes
 Project Name: 11.8
+Description: This program allows user to input information for 10 customers. The program then allows the user to enter a name to searc for
+a customer matching the name. If the name was found, it prints the customer information. If the name was not found it prints an error message.
 */
 
 #include <iostream>
@@ -11,17 +13,14 @@ using namespace std;
 // Number of customers in array
 const int SIZE = 10;
 
-
-/*
-Holds customer data
-*/
+// Holds customer data
 typedef struct customer {
 	string name;
 	string address;
 	string city;
 	string state;
-	int zip = 0;
-	double balance = 0.0;
+	int zip;
+	double balance;
 	string dateOfLastPayment;
 };
 
@@ -30,10 +29,15 @@ typedef struct customer {
 void searchAccount(string inputName, customer customerArray[], int size);
 
 int main() {
+	// Array of customers
 	customer customers[SIZE];
+
+	// String for finding name
 	string searchName;
 
 	for (int i = 0; i < SIZE; i++) {
+		cout << "Enter information for customer " << i + 1 << endl;
+
 		cout << "Enter Name: ";
 		cin >> customers[i].name;
 
@@ -46,10 +50,10 @@ int main() {
 		cout << "Enter State: ";
 		cin >> customers[i].state;
 
-		cout << "Enter Zip: ";
+		cout << "Enter Integer for Zip: ";
 		cin >> customers[i].zip;
-
-		cout << "Enter Balance: ";
+		
+		cout << "Enter Integer for Balance: ";
 		cin >> customers[i].balance;
 
 		cout << "Enter Date of Last Payment: ";
@@ -66,10 +70,20 @@ int main() {
 	return 0;
 }
 
+
+/*
+Purpose: Find and print name entered
+Parameters: Input string, array of customers, size of array
+Return: None, prints array information if name matches
+*/
 void searchAccount(string inputName, customer customerArray[], int size) {
+	// Check if name is found
 	bool found = false;
+
+	// Set index to index of name matched
 	int foundIndex;
 	
+	// Check if name matches structures
 	for (int index = 0; index < size; index++) {
 		if (inputName == customerArray[index].name) {
 			found = true;
@@ -77,6 +91,8 @@ void searchAccount(string inputName, customer customerArray[], int size) {
 		}
 	}
 
+	// Print account information if it was found
+	// If not, print error message
 	if (found == true) {
 		cout << "Found accout matching name" << endl;
 		cout << "Name: " << customerArray[foundIndex].name << endl;
