@@ -24,7 +24,7 @@ int main() {
 
 	// Allow user input to enter any number
 	for (int i = 0; i < SIZE; i++) {
-		cout << "Enter " << SIZE << "numbers in either ascending or descending order : ";
+		cout << "Enter " << SIZE << " numbers in either ascending or descending order: ";
 		cin >> input;
 		numArray[i] = input;
 	}
