@@ -1,8 +1,9 @@
 /*
 Name: James Hayes
 Project Name: 11.8
-Description: This program allows user to input information for 10 customers. The program then allows the user to enter a name to searc for
-a customer matching the name. If the name was found, it prints the customer information. If the name was not found it prints an error message.
+Description: This program allows user to input information for each value in monthlyBudget structure.
+The program then decides if some values were over or under the ideal budget and displays the 
+difference, by comparing two structures' values.
 */
 
 #include <iostream>
@@ -28,27 +29,39 @@ struct monthlyBudget {
 };
 
 // Function prototypes
-// Search array with name entered
+// Prompt user to enter values in their budget
 void enterBudget(monthlyBudget&);
+
+// Display the differences between the ideal and input budget
 void budgetReport(monthlyBudget, monthlyBudget);
 
 int main() {
+	// Ideal Budget
 	monthlyBudget idealBudget = {500.00, 150.00, 65.00, 50.00, 
 		250.00, 30.00, 100.00, 150.00, 75.00, 50.00};
+
+	// Input Budget
 	monthlyBudget studentBudget = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 	0.0, 0.0, 0.0, 0.0 };
 
-	//monthlyBudget* inputPtr = &studentBudget;
-
+	// Prompt user to enter budget
 	enterBudget(studentBudget);
 
+	// Display what it went over
 	budgetReport(studentBudget, idealBudget);
 
 	return 0;
 
 }
 
+
+/*
+Purpose: Prompt user to enter values for their budget
+Parameters: Address of input budget
+Return: None, but modify the values in main
+*/
 void enterBudget(monthlyBudget& budget) {
+	// Prompt user for each value in monthly budget
 	cout << "Enter Budget for housing: ";
 	cin >> budget.housing;
 
@@ -83,10 +96,26 @@ void enterBudget(monthlyBudget& budget) {
 
 }
 
+
+/*
+Purpose: Display how above or below the student's budget is compared to ideal 
+budget
+Parameters: input budget, ideal budget
+Return: None, but print and display how much the input budget was above or below
+ideal budget
+*/
 void budgetReport(monthlyBudget inputBudget, monthlyBudget idealBudget) {
+	// Accumalate every value for input
+	// and ideal budget
 	double totalInputBudget = 0.0;
 	double totalIdealBudget = 0.0;
 
+
+	/*
+	For each value, accumulate it into the total variables
+	Then decide if the budget was above or below ideal
+	Display the difference
+	*/
 	totalInputBudget += inputBudget.housing;
 	totalIdealBudget += idealBudget.housing;
 	double housingBudgetDiff;
@@ -96,7 +125,7 @@ void budgetReport(monthlyBudget inputBudget, monthlyBudget idealBudget) {
 	}
 	else {
 		cout << "Housing is above ideal budget by: $" << 
-			inputBudget.housing - inputBudget.housing << endl;
+			inputBudget.housing - idealBudget.housing << endl;
 	}
 
 	totalInputBudget += inputBudget.utilities;
@@ -198,6 +227,7 @@ void budgetReport(monthlyBudget inputBudget, monthlyBudget idealBudget) {
 			inputBudget.miscellaneous - idealBudget.miscellaneous << endl;
 	}
 
+	// Display whether or not the budget was above or below ideal
 	if (totalInputBudget < totalIdealBudget) {
 		cout << "Total Budget is below ideal budget by: $" <<
 			totalIdealBudget - totalInputBudget << endl;
