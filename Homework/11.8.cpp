@@ -14,7 +14,7 @@ using namespace std;
 const int SIZE = 10;
 
 // Holds customer data
-typedef struct customer {
+struct customer {
 	string name;
 	string address;
 	string city;
