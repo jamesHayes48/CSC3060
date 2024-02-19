@@ -56,6 +56,8 @@ int main() {
 
 	// Character for user to enter to choose operation
 	char addOrRem;
+	
+	// Keep prompting until user enters sentinel value
 	do {
 		// Prompt user to select bin
 		displayBins(binArray, BINS);
@@ -82,7 +84,7 @@ int main() {
 				cout << "Invalid operation entered";
 			}
 		}
-	} while (binSelect != -1);
+	} while (binSelect != SENTINEL);
 
 	// Exit program once sentinel value is entered
 	return 0;
@@ -96,7 +98,7 @@ Return: None, but print information of every bin on screen
 void displayBins(inventoryBin array[], int size) {
 	cout << "--------------------------------------" << endl;
 	for (int i = 0; i < size; i++) {
-		cout << "Bin " << i + 1 << " Name: " << array[i].name << " Number of parts: " << 
+		cout << "Bin " << i + 1 << " Name: " << array[i].name << "\n - Number of parts: " << 
 			array[i].numParts << endl;;
 	}
 	cout << "--------------------------------------" << endl;
