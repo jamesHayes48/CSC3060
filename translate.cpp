@@ -64,8 +64,10 @@ unordered_map<char, string> regDict = {
 
 string findInstruction(char op[]);
 string findRegister(char regs[], int index);
+string findDestOrImm(string find);
 
 int main() {
+	cout << "Enter hexadecimal and translate it into y86 code :3:" << endl;
 	int i = 0;
 	char hexCode[800];
 	cin.getline(hexCode, 800);
@@ -103,20 +105,30 @@ int main() {
 			}
 			else if (instruction == "iaddq" || instruction == "isubq" || instruction == "iandq" 
 				|| instruction == "ixorq" || instruction == "irmovq") {
+				disImmStr = findDestOrImm(disImmStr);
 				cout << instruction << " $0x" << disImmStr << ", " << findRegister(reg, 1);
 				i += 20;
 			}
 			else if (instruction == "mrmovq") {
-
+				disImmStr = findDestOrImm(disImmStr);
+				cout << instruction << " $0x" << disImmStr << "(" << findRegister(reg, 0) << "), " << findRegister(reg, 1);
+				i += 20;
 			}
 			else if (instruction == "rmmovq") {
-
+				disImmStr = findDestOrImm(disImmStr);
+				cout << instruction << " " << findRegister(reg, 0) << ", 0x" << disImmStr << "(" << findRegister(reg, 1) << ")";
+				i += 20;
 			}
 			else if (instruction == "jmp" || instruction == "jle" || instruction == "jl" ||
 				instruction == "je" || instruction == "jne" || instruction == "jge" || 
-				instruction == "jg") {
-
+				instruction == "jg" || instruction == "call") {
+				destStr = findDestOrImm(destStr);
+				cout << instruction << " 0x" << destStr;
 				i += 18;
+			}
+			else if (instruction == "halt" || instruction == "nop" || instruction == "ret") {
+				cout << instruction;
+				i += 2;
 			}
 			else {
 				cout << "Invalid instruction entered :[";
@@ -178,5 +190,10 @@ string findRegister(char regs[], int index) {
 }
 
 string findDestOrImm(string find) {
-
+	string dest;
+	for (int i = 16; i > 0; i -= 2) {
+		string temp = find.substr(i-2, 2);
+		dest += temp;
+	}
+	return dest;
 }
