@@ -12,8 +12,14 @@ every variable in the class.
 #include <iomanip>
 using namespace std;
 
+// Classee
+/*
+Purpose: Associate Patient information
+Member Variables: Name, Address, Phone number, and Emergency contact
+Methods: Mutator and accessor functions for each member variable
+*/
 class Patient {
-
+	// Private member variables
 private:
 	string name;
 	string address;
@@ -72,7 +78,11 @@ public:
 	}
 };
 
-
+/*
+Purpose: Associate Procedure information
+Member Variables: Name, Practioner, Date, and Charge
+Methods: Mutator and accessor functions for each member variable and print details
+*/
 class Procedure {
 	// Private member variables
 private:
@@ -81,7 +91,7 @@ private:
 	string practioner;
 	double charge;
 
-	// Public functions
+	// Public methods
 public:
 	// Constructor
 	Procedure(string inputName, string inputDate, string inputPract, double inputCharge) {
@@ -134,7 +144,6 @@ public:
 
 	// Display details of procedure
 	void displayDetails() {
-		cout << "-----------------------------\n";
 		cout << "Procedure Name: " << name << endl;
 		cout << "Date: " << date << endl;
 		cout << "Practioner: " << practioner << endl;
@@ -149,7 +158,7 @@ public:
 void printPatientInfo(Patient patient1);
 
 int main() {
-	// Initialize patient with mutator
+	// Initialize patient with mutators
 	Patient myPatient("","","","");
 	myPatient.setName("Joseph R. Biden");
 	myPatient.setAddress("1600 Pennsylvania Avenue NW, Washington, DC 20500");
@@ -159,7 +168,7 @@ int main() {
 	// Print patient info through function
 	printPatientInfo(myPatient);
 
-	// Intitialize procedures 1, 2, and 3
+	// Intitialize procedures 1, 2, and 3 with constructor
 	Procedure procedure1("Physical Exam", "2-25-2024", "Dr. Irvine", 250.00);
 	Procedure procedure2("X-ray", "2-25-2024", "Dr. Jamison", 500.00);
 	Procedure procedure3("Blood test", "2-25-2024", "Dr. Smith", 200.00);
@@ -173,6 +182,9 @@ int main() {
 
 	cout << "Procedure 3:\n";
 	procedure3.displayDetails();
+
+	// Exit Program
+	return 0;
 }
 
 /*

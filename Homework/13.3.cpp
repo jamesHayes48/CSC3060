@@ -12,15 +12,18 @@ the speed of car.
 
 using namespace std;
 
+// Constants
 const int CONTROL = 5;
 
+// Classes
 /*
-Purpose: Store name, model, and speed of car
-Parameters: YearModel and name
-Functions: Accelerate, brake, getYearModel, getMake, and getSpeed
+Purpose: Associate car information and function
+Member Variables: YearModel and name
+Methods: Accelerate, brake, and accessor functions for member variables
 */
 class Car {
 	// Private member Variables
+private:
 	int yearModel;
 	string make;
 	int speed;
@@ -64,8 +67,9 @@ public:
 
 int main() {
 	// Declare and initalize car variable
-	Car myCar(2055, "Zorbulon");
+	Car myCar(2024, "Ford F150");
 
+	// Print information for car
 	cout << "Make: " << myCar.getMake() << " " << myCar.getYearModel() << endl;
 
 	// Accelerate and add speed five times
