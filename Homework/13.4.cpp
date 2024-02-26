@@ -1,9 +1,10 @@
 /*
 Name: James Hayes
 Assignment: 13.4
-Description: This program defines a procedure class with private member variables and public constructor,
-destructor, and both mutator and accessor functions. It also contains a function to display every variable
-in the 
+Description: This program defines a patient class with private member variables with a constructor and destructor. It also contains both 
+mutator and accessor function for each member variable. It also defines  a procedure class with private member variables and 
+public constructor, destructor, and both mutator and accessor functions. The procedure class also contains a function to display 
+every variable in the class.
 */
 
 #include <iostream>
@@ -53,21 +54,21 @@ public:
 	}
 
 	// Set name of procedure
-	void setAddress(string input) {
-		address = input;
+	void setPhoneNum(string input) {
+		phoneNum = input;
 	}
 	// Return name of procedure
-	string getAddress() {
-		return address;
+	string getPhoneNum() {
+		return phoneNum;
 	}
 
 	// Set name of procedure
-	void setAddress(string input) {
-		address = input;
+	void setEContact(string input) {
+		emergencyContact = input;
 	}
 	// Return name of procedure
-	string getAddress() {
-		return address;
+	string getEContact() {
+		return emergencyContact;
 	}
 };
 
@@ -143,8 +144,21 @@ public:
 
 };
 
+// Function Prototypes
+// Print Patient information
+void printPatientInfo(Patient patient1);
 
 int main() {
+	// Initialize patient with mutator
+	Patient myPatient("","","","");
+	myPatient.setName("Joseph R. Biden");
+	myPatient.setAddress("1600 Pennsylvania Avenue NW, Washington, DC 20500");
+	myPatient.setPhoneNum("432-123-4567");
+	myPatient.setEContact("456-432-5321");
+
+	// Print patient info through function
+	printPatientInfo(myPatient);
+
 	// Intitialize procedures 1, 2, and 3
 	Procedure procedure1("Physical Exam", "2-25-2024", "Dr. Irvine", 250.00);
 	Procedure procedure2("X-ray", "2-25-2024", "Dr. Jamison", 500.00);
@@ -159,4 +173,18 @@ int main() {
 
 	cout << "Procedure 3:\n";
 	procedure3.displayDetails();
+}
+
+/*
+Purpose: Print information of a patient
+Parameters: instance of patient class
+Return: None, but print information in patient using
+accessor functions.
+*/
+void printPatientInfo(Patient patient1) {
+	cout << "Name: " << patient1.getName() << endl;
+	cout << "Address: " << patient1.getAddress() << endl;
+	cout << "Phone Number: " << patient1.getPhoneNum() << endl;
+	cout << "Emergency Contact: " << patient1.getEContact() << endl;
+	cout << endl;
 }
