@@ -183,6 +183,9 @@ int main() {
 	cout << "Procedure 3:\n";
 	procedure3.displayDetails();
 
+	// Print total charge
+	cout << "Procedure Total Charge: $" << procedure1.getCharge() + procedure2.getCharge() + procedure3.getCharge() << endl;
+
 	// Exit Program
 	return 0;
 }
