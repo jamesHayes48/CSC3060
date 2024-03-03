@@ -14,10 +14,10 @@ int main() {
 	double average;
 
 	// Get num of sentences in file
-	sentences = countSentence("text.txt");
+	sentences = countSentence("Text.txt");
 
 	// Get number of words
-	words = countWords("text.txt");
+	words = countWords("Text.txt");
 
 	average = static_cast<double>(words) / sentences;
 
@@ -79,7 +79,7 @@ int countWords(string filename) {
 		int index = 0;
 		while (input[index] != '0') {
 			while (isspace(input[index]) && input[index] != '\0') {
-				index++
+				index++;
 			}
 			if (input[index] != '\0') {
 				numWords++;
@@ -89,6 +89,9 @@ int countWords(string filename) {
 				index++;
 			}
 		}
-		input
+		input;
 	}
+
+	inputFile.close();
+	return numWords;
 }

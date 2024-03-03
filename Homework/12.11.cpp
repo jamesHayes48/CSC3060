@@ -3,8 +3,12 @@
 #include <string>
 using namespace std;
 
+
 // Constants
 const int SIZE = 12;
+string path = "corp.dat.txt";
+
+void print();
 
 struct Division {
 	char diveName[SIZE];
@@ -14,7 +18,7 @@ struct Division {
 
 int main() {
 	// File stream it baby ios out-> read ios binary-> read only text
-	fstream corporateData("corp.dat", ios::out | ios::binary);
+	fstream corporateData(path, ios::out | ios::binary);
 	
 	// Division structure
 	Division east, west, north, south;
@@ -34,6 +38,7 @@ int main() {
 		east.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
 		cin >> east.quarterlySales;
+		print();
 		corporateData.write(reinterpret_cast<char*> (&east), sizeof(east));
 	}
 
@@ -54,6 +59,7 @@ int main() {
 		north.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
 		cin >> north.quarterlySales;
+		print();
 		corporateData.write(reinterpret_cast<char*> (&north), sizeof(north));
 	}
 
@@ -63,7 +69,7 @@ int main() {
 		south.quarter = qtr;
 		cout << "\tQuarter " << qtr << ": ";
 		cin >> south.quarterlySales;
-
+		print();
 		// Cast address sof west cast into char pointer, go to it and put it in there
 		corporateData.write(reinterpret_cast<char*> (&south), sizeof(south));
 	}
@@ -73,4 +79,9 @@ int main() {
 
 	return 0;
 }
+
+void print() {
+	cout << "Printing to file?\n";
+}
+
 
