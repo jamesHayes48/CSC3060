@@ -1,0 +1,29 @@
+East United States Division sales by quarter:
+Quarter 1 total sales:	1000
+Quarter 2 total sales:	2000
+Quarter 3 total sales:	3000
+Quarter 4 total sales:	4000
+
+West United States Division sales by quarter:
+Quarter 1 total sales:	2000
+Quarter 2 total sales:	2000
+Quarter 3 total sales:	2000
+Quarter 4 total sales:	200
+
+Central United States Division sales by quarter:
+Quarter 1 total sales:	350
+Quarter 2 total sales:	12
+Quarter 3 total sales:	2300
+Quarter 4 total sales:	4000
+
+Canada Division sales by quarter:
+Quarter 1 total sales:	3200
+Quarter 2 total sales:	3200
+Quarter 3 total sales:	3200
+Quarter 4 total sales:	3200
+
+South America Division sales by quarter:
+Quarter 1 total sales:	3000
+Quarter 2 total sales:	3000
+Quarter 3 total sales:	3000
+Quarter 4 total sales:	3000
