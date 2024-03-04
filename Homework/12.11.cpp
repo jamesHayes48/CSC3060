@@ -39,7 +39,7 @@ int main() {
 		cout << "\tQuarter " << qtr << ": ";
 		cin >> east.quarterlySales;
 		print();
-		corporateData.write(reinterpret_cast<char*> (&east), sizeof(east));
+		corporateData.write(reinterpret_cast<char*> (&east), sizeof(Division));
 	}
 
 	// Get sales for East division
@@ -50,7 +50,7 @@ int main() {
 		cin >> west.quarterlySales;
 
 		// Cast address sof west cast into char pointer, go to it and put it in there
-		corporateData.write(reinterpret_cast<char*> (&west), sizeof(west));
+		corporateData.write(reinterpret_cast<char*> (&west), sizeof(Division));
 	}
 
 	// Get sales for East
@@ -60,7 +60,7 @@ int main() {
 		cout << "\tQuarter " << qtr << ": ";
 		cin >> north.quarterlySales;
 		print();
-		corporateData.write(reinterpret_cast<char*> (&north), sizeof(north));
+		corporateData.write(reinterpret_cast<char*> (&north), sizeof(Division));
 	}
 
 	// Get sales for East division
@@ -71,7 +71,7 @@ int main() {
 		cin >> south.quarterlySales;
 		print();
 		// Cast address sof west cast into char pointer, go to it and put it in there
-		corporateData.write(reinterpret_cast<char*> (&south), sizeof(south));
+		corporateData.write(reinterpret_cast<char*> (&south), sizeof(Division));
 	}
 
 	// Close file
