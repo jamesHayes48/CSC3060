@@ -24,5 +24,8 @@ int main() {
 		cout << "False" << endl;
 	//int nums[5];
 	int numbers[4] = {99, 87};
+	int numr[3];
+	numr[0] = 4;
 	cout << numbers[3] << endl;
+	cout << numr[2];
 }

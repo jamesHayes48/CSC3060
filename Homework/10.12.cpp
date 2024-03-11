@@ -81,10 +81,10 @@ bool hasLength(char str[]) {
 	int count = 0;
 
 	// Count length
-	while (*str != '/0') {
+	while (*str != '\0') {
 		count++;
 
-		*str++;
+		str++;
 	}
 
 	if (count >= MIN) {
@@ -102,7 +102,7 @@ bool hasLower(char str[]) {
 			count++;
 		}
 		else {
-			*str++;
+			str++;
 		}
 	}
 
@@ -122,7 +122,7 @@ bool hasUpper(char str[]) {
 			count++;
 		}
 		else {
-			*str++;
+			str++;
 		}
 	}
 
@@ -142,7 +142,7 @@ bool hasDigit(char str[]) {
 			count++;
 		}
 		else {
-			*str++;
+			str++;
 		}
 	}
 
