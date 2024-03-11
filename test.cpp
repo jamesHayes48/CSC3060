@@ -28,4 +28,10 @@ int main() {
 	numr[0] = 4;
 	cout << numbers[3] << endl;
 	cout << numr[2];
+
+	int n = 4;
+	char* charPtr = nullptr;
+	int* Ptr = static_cast<int*>(static_cast<void*>(charPtr));
 }
+
+int qempty() { return f == r ? 1 : 0; }
