@@ -74,6 +74,7 @@ public:
 	FeetInches operator < (const FeetInches&);
 
 	FeetInches operator == (const FeetInches&);
+
 	// New Operators
 	bool operator >= (const FeetInches&);
 	bool operator <= (const FeetInches&);

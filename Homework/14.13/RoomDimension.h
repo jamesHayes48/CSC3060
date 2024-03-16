@@ -30,7 +30,6 @@ public:
 
 
 	// getArea function
-
 	FeetInches getArea() {
 		return area;
 	}

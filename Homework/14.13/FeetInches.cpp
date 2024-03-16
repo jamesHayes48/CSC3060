@@ -1,4 +1,4 @@
-#include <cstdlib>
+#include <cstdlib> // For abs function
 #include "FeetInches.h"
 
 
@@ -8,7 +8,6 @@ in inches member > 12 or <0. If found, numbers feet and inches are adjusted
 to conform to standard feet & inches expression. For example, 3' 12" would be 
 adjusted to 4' 2" and 5' 2" adjusted to 4' 10".
 */
-
 void FeetInches::simplify() {
 	if (inches >= 12) {
 		feet += (inches / 12);
@@ -22,9 +21,8 @@ void FeetInches::simplify() {
 
 
 /*
-Overloaded binary operator 
+Overloaded + binary operator 
 */
-
 FeetInches FeetInches::operator + (const FeetInches& right) {
 	FeetInches temp;
 	temp.inches = inches + right.inches;
@@ -37,7 +35,6 @@ FeetInches FeetInches::operator + (const FeetInches& right) {
 /*
 Overloaded binary - operator
 */
-
 FeetInches FeetInches::operator - (const FeetInches& right) {
 	FeetInches temp;
 	temp.inches = inches - right.inches;
@@ -60,7 +57,6 @@ FeetInches FeetInches::operator ++ () {
 Overloaded Postfix operator. Causes inches member to be incremented.
 Return: Value of object before increment.
 */
-
 FeetInches FeetInches::operator ++ (int) {
 	FeetInches temp(feet, inches);
 	inches++;
@@ -69,10 +65,9 @@ FeetInches FeetInches::operator ++ (int) {
 }
 
 /*
-Overloaded > operator
+Overloaded > operator: Return true if current object is greater than right object
 */
-
-bool FeetInches::operator > (const FeetInches& right) {
+FeetInches FeetInches::operator > (const FeetInches& right) {
 	bool status;
 	if (feet > right.feet)
 		status = true;
@@ -85,10 +80,9 @@ bool FeetInches::operator > (const FeetInches& right) {
 }
 
 /*
-Overloaded < operator 
+Overloaded < operator: Return true if current object is less than right object
 */
-
-bool FeetInches::operator == (const FeetInches& right) {
+FeetInches FeetInches::operator == (const FeetInches& right) {
 	bool status;
 
 	if (feet < right.feet)
@@ -101,16 +95,28 @@ bool FeetInches::operator == (const FeetInches& right) {
 	return status;
 }
 
+/*
+Output stream operator: Allows cout to display FeetInches objects
+*/
 ostream& operator <<(ostream& strm, const FeetInches& obj) {
 	strm << obj.feet;
+	return strm;
 }
 
+/*
+Input stream operator: Allows cin to store input into FeetInches objects
+*/
 istream& operator >> (istream& strm, FeetInches& obj) {
 	// Prompt user for feet
-
+	cout << "Feet: ";
+	strm >> obj.feet;
+		
 	// Prompt user for inches
+	cout << "Inches: ";
+	strm >> obj.inches;
 
 	// Normalize values
+	obj.simplify();
 
 	return strm;
 }
@@ -119,23 +125,57 @@ istream& operator >> (istream& strm, FeetInches& obj) {
 /*
 Convert to double
 */
-
 FeetInches::operator double() {
-
+	double temp = feet;
+	temp += (inches / 12.0);
+	return temp;
 }
 
+/*
+Convert to int
+*/
 FeetInches::operator int() {
-
+	return feet;
 }
 
+/*
+Check if feet is greater than or equal to right feet
+*/
 bool FeetInches::operator >= (const FeetInches& right) {
+	bool status;
 
+	if ((feet > right.feet) || (feet == right.feet))
+		status = true;
+	else
+		status = false;
+
+	return status;
 }
 
+/*
+Check if feet is less than or equal to right feet
+*/
 bool FeetInches::operator <= (const FeetInches& right) {
+	bool status;
 
+	if ((feet < right.feet) || (feet == right.feet))
+		status = true;
+	else
+		status = false;
+
+	return status;
 }
 
+/*
+Check if feet are not equal to each other
+*/
 bool FeetInches::operator != (const FeetInches& right) {
+	bool status;
 
+	if (feet == right.feet)
+		status = false;
+	else
+		status = true;
+
+	return status;
 }
