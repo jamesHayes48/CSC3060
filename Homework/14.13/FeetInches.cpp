@@ -11,7 +11,7 @@ adjusted to 4' 2" and 5' 2" adjusted to 4' 10".
 void FeetInches::simplify() {
 	if (inches >= 12) {
 		feet += (inches / 12);
-		inches = inches & 12;
+		inches = inches % 12;
 	}
 	else if (inches < 0) {
 		feet -= ((abs(inches) / 12) + 1);

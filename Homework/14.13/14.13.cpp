@@ -16,27 +16,37 @@ using namespace std;
 
 int main() {
 	// User length
-	int lengthFeet;
+	int lengthFeet, lengthInches;
 
 	// User width
-	int widthFeet;
+	int widthFeet, widthInches;
 
 	// Cost of carpet
 	double costPerFoot;
 
 	// Get room length
-	cout << "Enter room length in feet: ";
+	cout << "Enter room length: " << endl;
+	
+	cout << "Feet: ";
 	cin >> lengthFeet;
 
+	cout << "Inches: ";
+	cin >> lengthInches;
+
 	// Create FeetInches object for the length
-	FeetInches inchesLength(lengthFeet);
+	FeetInches inchesLength(lengthFeet, lengthInches);
 
 	// Get room width
-	cout << "Enter room width in feet: ";
+	cout << "Enter room width: " << endl;
+
+	cout << "Feet: ";
 	cin >> widthFeet;
 
-	// Create FeetInches object for the length
-	FeetInches inchesWidth(widthFeet);
+	cout << "Inches: ";
+	cin >> widthInches;
+
+	// Create FeetInches object for the width
+	FeetInches inchesWidth(widthFeet, widthInches);
 
 	// Create a dimension object
 	RoomDimension userDimension(inchesLength, inchesWidth);
