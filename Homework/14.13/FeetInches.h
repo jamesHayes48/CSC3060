@@ -19,10 +19,11 @@ class FeetInches {
 private:
 	int feet;	// Hold Number of feet
 	int inches;	// Hold number of inches
-	void simplify();	// Valdiation function
-		// to be defined in FeetInches.cpp
+	
 
 public:
+	void simplify(); // Valdiation function
+	// to be defined in FeetInches.cpp
 	// Constructor
 	FeetInches(int f = 0, int i = 0) {
 		feet = f;
@@ -48,6 +49,7 @@ public:
 		FeetInches temp;
 		temp.feet = feet * obj.feet;
 		temp.inches = inches * obj.inches;
+		temp.simplify();
 		return temp;
 	}
 
@@ -62,18 +64,12 @@ public:
 
 	// Overloaded operator functions
 	FeetInches operator + (const FeetInches&);
-
 	FeetInches operator - (const FeetInches&);
-
 	FeetInches operator ++ (); // Prefix
-
 	FeetInches operator ++ (int); // Postfix
-
-	FeetInches operator > (const FeetInches&);
-
-	FeetInches operator < (const FeetInches&);
-
-	FeetInches operator == (const FeetInches&);
+	bool operator > (const FeetInches&);
+	bool operator < (const FeetInches&);
+	bool operator == (const FeetInches&);
 
 	// New Operators
 	bool operator >= (const FeetInches&);
@@ -86,7 +82,6 @@ public:
 
 	// Friends - Access members of other classes
 	friend ostream& operator << (ostream&, const FeetInches&);
-
 	friend istream& operator >> (istream&, FeetInches&);
 };
 

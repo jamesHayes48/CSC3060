@@ -1,8 +1,8 @@
 /*
 Name: James Hayes
 Assignment: 14.13
-Description: This program asks the user to input the length and width of a room and the cost of the carpet
-per square feet. It displays the cost of the carpet at the end of the program. 
+Description: This program asks the user to input the length and width of a room (feet and inches) 
+and the cost of the carpet per square feet. It displays the cost of the carpet at the end of the program. 
 The program is seperated into 3 header files and 1 cpp file for the FeetInches object. It shows the 
 abstraction and encapsulation that can be done through the use of classes. 
 */
@@ -59,7 +59,7 @@ int main() {
 	RoomCarpet userCarpet(userDimension, costPerFoot);
 
 	// Display cost
-	cout << "Total cost: $" <<  userCarpet.getTotalCost();
+	cout << "Total cost: $" << fixed << setprecision(2) << userCarpet.getTotalCost();
 
 	return 0;
 }

@@ -67,7 +67,7 @@ FeetInches FeetInches::operator ++ (int) {
 /*
 Overloaded > operator: Return true if current object is greater than right object
 */
-FeetInches FeetInches::operator > (const FeetInches& right) {
+bool FeetInches::operator > (const FeetInches& right) {
 	bool status;
 	if (feet > right.feet)
 		status = true;
@@ -82,10 +82,26 @@ FeetInches FeetInches::operator > (const FeetInches& right) {
 /*
 Overloaded < operator: Return true if current object is less than right object
 */
-FeetInches FeetInches::operator == (const FeetInches& right) {
+bool FeetInches::operator < (const FeetInches& right) {
 	bool status;
 
 	if (feet < right.feet)
+		status = true;
+	else if (feet == right.feet && inches < right.inches)
+		status = true;
+	else
+		status = false;
+
+	return status;
+}
+
+/*
+Overloaded == operator: Return true if current object is equal to right object
+*/
+bool FeetInches::operator == (const FeetInches& right) {
+	bool status;
+
+	if (feet == right.feet)
 		status = true;
 	else if (feet == right.feet && inches < right.inches)
 		status = true;
@@ -144,7 +160,7 @@ Check if feet is greater than or equal to right feet
 bool FeetInches::operator >= (const FeetInches& right) {
 	bool status;
 
-	if ((feet > right.feet) || (feet == right.feet))
+	if ((*this > right) || (*this == right))
 		status = true;
 	else
 		status = false;
@@ -158,7 +174,7 @@ Check if feet is less than or equal to right feet
 bool FeetInches::operator <= (const FeetInches& right) {
 	bool status;
 
-	if ((feet < right.feet) || (feet == right.feet))
+	if ((*this < right) || (*this == right))
 		status = true;
 	else
 		status = false;
@@ -172,7 +188,7 @@ Check if feet are not equal to each other
 bool FeetInches::operator != (const FeetInches& right) {
 	bool status;
 
-	if (feet == right.feet)
+	if (*this == right)
 		status = false;
 	else
 		status = true;
