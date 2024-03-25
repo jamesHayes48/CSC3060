@@ -15,33 +15,52 @@ private:
 public:
 	// Default Constructor
 	CourseGrades() {
-
+		
 	}
 
 	// Parameterized Constructor
-	CourseGrades() {
+	CourseGrades(string labName, int labScore, string examName, int examScore, 
+		string essayName, int essayScore, string fExamName, int fExamScore) {
 
+		// Intialize lab
+		grades[0].setName(labName);
+		grades[0].setScore(labScore);
+
+		// Intilialize exam
+		grades[1].setName(examName);
+		grades[1].setScore(examScore);
+
+		// Intialize essay
+		grades[2].setName(essayName);
+		grades[2].setScore(essayScore);
+
+		// Intialize Final Exam
+		grades[3].setName(fExamName);
+		grades[3].setScore(fExamScore);
 	}
 
 	// Mutator
-	void setLab(int score) {
-
+	void setLab(GradedActivity& lab, int Score) {
+		lab.setScore(Score);
 	}
 
-	void setPassFailExam(int score) {
-
+	void setPassFailExam(GradedActivity& exam, int Score) {
+		exam.setScore(Score);
 	}
 
-	void setEssay(int score) {
-
+	void setEssay(GradedActivity& essay, int Score) {
+		essay.setScore(Score);
 	}
 
-	void setFinalExam(int score) {
-
+	void setFinalExam(GradedActivity& fExam, int Score) {
+		fExam.setScore(Score);
 	}
 
 	void print() {
-
+		for (int i = 0; i < 4; i++) {
+			cout << "Name: " << grades[i].getName() << endl;
+			cout << "Score: " << grades[i].getScore() << endl;
+		}
 	}
 };
 
