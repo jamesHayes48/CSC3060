@@ -1,27 +1,34 @@
+/*
+* Name: James Hayes
+* Assignment: 15.11
+*/
 #pragma once
 #ifndef GRADEDACTIVITY_H
 #define GRADEDACTIVITY_H
 #include <iostream>
 using namespace std;
 
+/*
+Purpose: Store Name and score of an assignment 
+*/
 class GradedActivity {
 private:
 	string name;
 	int score;
 public:
-	// Constructor 
+	// Parameterized Constructor 
 	GradedActivity(string Name, int Score) {
 		name = Name;
 		score = Score;
 	}
 
-	// Default
+	// Default Constructor
 	GradedActivity() {
 		name = "";
 		score = 0;
 	}
 
-	// Mutator
+	// Mutators
 	void setName(string Name) {
 		name = Name;
 	}
@@ -30,7 +37,7 @@ public:
 		score = Score;
 	}
 
-	// Accessor
+	// Accessors
 	string getName() {
 		return name;
 	}

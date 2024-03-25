@@ -1,8 +1,16 @@
+/*
+* Name: James Hayes
+* Assignment: 15.11
+* Header Files: GradedActivity.h
+*/
 #pragma once
 #ifndef COURSEGRADES_H
 #define COURSEGRADES_H
 #include "GradedActivity.h"
 
+/*
+Hold array of assignments in a course
+*/
 class CourseGrades {
 private:
 	/*
@@ -39,7 +47,7 @@ public:
 		grades[3].setScore(fExamScore);
 	}
 
-	// Mutator
+	// Mutators
 	void setLab(GradedActivity& lab, int Score) {
 		lab.setScore(Score);
 	}
@@ -56,7 +64,9 @@ public:
 		fExam.setScore(Score);
 	}
 
+	// Print name and score of each assignment in grades
 	void print() {
+		cout << "-------------Score-------------" << endl;
 		for (int i = 0; i < 4; i++) {
 			cout << "Name: " << grades[i].getName() << endl;
 			cout << "Score: " << grades[i].getScore() << endl;

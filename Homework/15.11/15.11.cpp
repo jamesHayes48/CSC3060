@@ -1,6 +1,8 @@
 /*
-Name: James Hayes
-Assignment: 15.11
+* Name: James Hayes
+* Assignment: 15.11
+* Header Files: CourseGrades.h
+
 Description: This program demonstrates using an array of objects in another object. It intializes an 
 array of assignments for class1 and then prints out the information of each assignment. 
 CourseGrades.h uses GradedActivity.h as an array for its member variable.
@@ -13,7 +15,7 @@ int main() {
 	// Create and intialize object and array 
 	CourseGrades class1("Lab", 70, "Pass/Fail Exam", 70, "Essay", 60, "Final Exam", 100);
 	
-	// Print everything in array
+	// Print grades of every assingment
 	class1.print();
 
 	return 0;
