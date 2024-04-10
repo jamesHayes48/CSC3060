@@ -1,9 +1,9 @@
 #pragma once
 #ifndef FINAL_EXAM_H
 #define FINAL_EXAM_H
-#include "GradedActivity.h"
+#include "classGradedActivity.h"
 
-class FinalExam	: public GradedActivity {
+class FinalExam	: public classGradedActivity {
 private:
 	int numQuestions;
 	double pointsEach;

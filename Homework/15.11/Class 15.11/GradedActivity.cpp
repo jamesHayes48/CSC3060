@@ -1,5 +1,5 @@
 #include "classGradedActivity.h"
-char GradedActivity::getLetterGrade() const {
+char classGradedActivity::getLetterGrade() const {
 	char letterGrade;
 
 	if (score > 89)

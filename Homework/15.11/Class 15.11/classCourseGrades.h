@@ -1,4 +1,10 @@
 #pragma once
+#include <iostream>
+#include "classGradedActivity.h"
+#include "PassFailExam.h"
+#include "FinalExam.h"
+#include "Essay.h"
+
 #ifndef CLASS_COURSEGRADES_H
 #define CLASS_COURSEGRADES_H
 // Constant for number of grades
@@ -29,15 +35,15 @@ public:
 		grades[PASS_FAIL_EXAM] = pfexam;
 	}
 
-	void setEssay(classGradedActivity* activity) {
+	void setEssay(Essay* essay) {
 		grades[ESSAY] = essay;
 	}
 
-	void setFinalExam(classGradedActivity* activity) {
+	void setFinalExam(FinalExam* finalExam) {
 		grades[FINAL_EXAM] = finalExam;
 	}
 
-	void print();
+	//void print();
 };
 
 #endif // !GRADEDACTIVITY_H

@@ -17,7 +17,7 @@ public:
 	void setGrammarPoints(double);
 	void setSpellingPoints(double);
 	void setLengthPoints(double);
-	void setContentPoints(double);
+	//void setContentPoints(double);
 
 	// Accessors
 	double getGrammarPoints() const {
@@ -36,8 +36,8 @@ public:
 		return contentPoints;
 	}
 
-	virtual double getScore();
-	virtual char getLettergrade();
+	//virtual double getScore();
+	//virtual char getLettergrade();
 };
 
 #endif // !ESSAY_H

@@ -4,27 +4,28 @@
 #include "PassFailExam.h"
 #include "FinalExam.h"
 #include "classCourseGrades.h"
+#include "Essay.h"
 using namespace std;
 
 int main() {
 	// Create Graded Activity for lab
-	GradedActivity lab(80);
+	classGradedActivity lab(80);
 
 	// Create PassFailExam object. 50 questions, 5 missed w/ min passing score 70.
 	PassFailExam pfexam(50, 5, 70);
 
 	// Create Essay object
 	Essay essay;
-	essay.setGrammerPoints(25);
+	essay.setGrammarPoints(25);
 	essay.setSpellingPoints(15);
 	essay.setLengthPoints(20);
-	essay.setContentPoints(30);
+	//essay.setContentPoints(30);
 
 	// Create final exam object
 	FinalExam finalExam(50, 5);
 
 	// Create CourseGrades object
-	CourseGrades myGrades;
+	classCourseGrades myGrades;
 
 	// Store grade items in the courseGrades object
 	myGrades.setLab(&lab);
@@ -33,7 +34,7 @@ int main() {
 	myGrades.setFinalExam(&finalExam);
 
 	// Print grade information
-	myGrades.print();
+	///myGrades.print();
 
 	return 0;
 }
