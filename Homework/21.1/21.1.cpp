@@ -1,3 +1,11 @@
+/*
+Name: James Hayes
+Class: CS 3060 - 002
+Assignment: 21.1
+Description: This program creates a binary tree through a template class and adds values in to show how it works.
+It shows how it removes a value or displays a value.
+*/
+
 #include <iostream>
 #include "BinaryTree.h"
 using namespace std;
@@ -18,7 +26,6 @@ int main() {
 	cout << "Here are the values in the tree: \n";
 	tree.displayInOrder();
 	cout << endl;
-
 
 	// Delate the 8 node
 	cout << "Deleting 8...\n";
