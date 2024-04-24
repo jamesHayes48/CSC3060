@@ -34,3 +34,17 @@ void Essay::setLengthPoints(double p) {
 	// Assign the points
 	lengthPoints = p;
 }
+
+void Essay::setContentPoints(double p)
+{
+	// Validate the points.
+	if (p < 0 || p > 30)
+	{
+		// Invalid data
+		cout << "Invalid number of content points.\n";
+		exit(EXIT_FAILURE);
+	}
+
+	// Assign the points.
+	contentPoints = p;
+}

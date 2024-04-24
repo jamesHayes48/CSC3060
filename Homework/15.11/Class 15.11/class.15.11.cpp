@@ -19,7 +19,7 @@ int main() {
 	essay.setGrammarPoints(25);
 	essay.setSpellingPoints(15);
 	essay.setLengthPoints(20);
-	//essay.setContentPoints(30);
+	essay.setContentPoints(30);
 
 	// Create final exam object
 	FinalExam finalExam(50, 5);
@@ -34,7 +34,7 @@ int main() {
 	myGrades.setFinalExam(&finalExam);
 
 	// Print grade information
-	///myGrades.print();
+	myGrades.print();
 
 	return 0;
 }

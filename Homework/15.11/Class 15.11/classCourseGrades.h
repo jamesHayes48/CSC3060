@@ -43,7 +43,7 @@ public:
 		grades[FINAL_EXAM] = finalExam;
 	}
 
-	void print();
+	void print() const;
 };
 
 #endif // !GRADEDACTIVITY_H
