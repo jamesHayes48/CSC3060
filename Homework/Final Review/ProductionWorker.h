@@ -53,10 +53,10 @@ public:
 		return payRate;
 	}
 
-	void printData() const {
+	void printData() {
 		Employee::printData();
 		cout << "Shift: " << shift << endl;
-		cout << "Hourly Pay Rate" << payRate << endl;
+		cout << "Hourly Pay Rate: $" << payRate << endl;
 	}
 };
 
