@@ -57,7 +57,7 @@ public:
 		return disabled;
 	}
 
-	void printData() const {
+	void printData() {
 		cout << "Name: " << name << endl;
 		cout << "Employee Number: " << employeeNum << endl;
 		cout << "Hire Date: " << hireDate << endl;
