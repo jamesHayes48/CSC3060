@@ -11,6 +11,7 @@ private:
 	string hireDate;
 	bool disabled;
 public:
+	// Constructor
 	Employee(string n, int num, string date, bool dis) {
 		name = n;
 		employeeNum = num;
@@ -18,6 +19,7 @@ public:
 		disabled = dis;
 	}
 
+	// Default Constructor
 	Employee() {
 		name = "";
 		employeeNum = 0;
@@ -25,11 +27,12 @@ public:
 		disabled = false;
 	}
 
+	// Destructor
 	~Employee() {
 
 	}
 
-	// Mutator
+	// Mutators
 	void setName(string n) {
 		name = n;
 	}
@@ -57,11 +60,18 @@ public:
 		return disabled;
 	}
 
+	// Print data of employee
 	void printData() {
+		string yesOrNo = "No";
 		cout << "Name: " << name << endl;
 		cout << "Employee Number: " << employeeNum << endl;
 		cout << "Hire Date: " << hireDate << endl;
-		cout << "Disabled: " << disabled << endl;
+
+		if (disabled = true) {
+			yesOrNo = "Yes";
+		}
+
+		cout << "Disabled: " << yesOrNo << endl;
 	}
 };
 
